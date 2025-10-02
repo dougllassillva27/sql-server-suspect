@@ -6,7 +6,9 @@ a = Analysis(
     ['recuperador.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[
+        ('assets/img/sql-server.ico', 'assets/img')  # Incluir o ícone no executável
+    ],
     hiddenimports=[
         'PyQt5.QtCore',
         'PyQt5.QtGui',
@@ -39,10 +41,12 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,  # ← AQUI: False = sem console
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='assets/img/sql-server.ico',
+    version='version_info.txt'
 )
